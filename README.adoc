@@ -1,38 +1,43 @@
 = DSL: Kotlin to HTML image:https://travis-ci.org/daggerok/kotlin-dsl-html.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/kotlin-dsl-html"]
 
+see final implementation here: `kotlin-dsl-html/src/main/java/daggerok/extensions/DOM.kt`
+
 .current DSL requires using `+` operator to join 2 and more elements
 [sources,kotlin]
 ----
-html {
-    head {
-        title {
-            "Hey"
-        }
-    } +
-    body {
-        div {
-            "Ho!"
-        }
+html("lang" to "ru", "xmlns" to "https://ololo-trololo.com/bla-bla/schema.xsd") {
+  head {
+    title {
+      "Hey"
     }
+  } +
+  body {
+    div("class" to "wrapper") {
+      "Ho!"
+    }
+  }
 }
 ----
 
-.which should generate output String:
+.code above produces next output:
 [sources,html]
 ----
-<html>
-    <head>
-        <title>Hey</title>
-    </head>
-    <body>
-        <div>Ho!</div>
-    </body>
+<html lang='ru' xmlns='http://ololo-trololo.com/bla-bla/schema.xsd'>
+  <head>
+    <title>Hey</title>
+  </head>
+  <body>
+    <div class='wrapper'>Ho!</div>
+  </body>
 </html>
 ----
 
+link:https://discuss.kotlinlang.org/t/kotlin-html-dsl/7378[TODO: DSL improvements question on Kotlin discuss]
+
 links:
 
-. link:https://www.youtube.com/watch?v=gPH9XnvpoXE[youtube: useful video]
+. link:https://www.youtube.com/watch?v=GjGQpSFieXA][youtube: Hadi Hariri @hhariri - Creating DSL's in idiomatic Kotlin]
+. link:https://www.youtube.com/watch?v=gPH9XnvpoXE[youtube: Kotlin DSLs in 42 minutes by Eugene Petrenko]
 . link:https://github.com/reactor/reactor-kotlin-extensions/blob/master/build.gradle.kts
 . link:https://github.com/johnrengelman/shadow/issues/317
 . link:https://github.com/gradle/kotlin-dsl/blob/master/samples/hello-kotlin/build.gradle.kts
