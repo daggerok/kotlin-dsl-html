@@ -3,8 +3,10 @@
  */
 
 import daggerok.extensions.DOM;
+import daggerok.extensions.HtmlBuilder;
 import kotlin.Pair;
-import kotlin.jvm.functions.Function1;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function2;
 import org.junit.Test;
 
 import java.util.stream.Stream;
@@ -17,9 +19,9 @@ public class AppTest {
   @Test
   public void testAppHasAGreeting() {
 
-    final Function1<? super String, String> func = string -> string;
+    final Function2<? super HtmlBuilder, ? super String, Unit> func = (HtmlBuilder b, String s) -> Unit.INSTANCE;
     final String html = DOM.html(Stream.empty().<Pair<String, String>>toArray(Pair[]::new), new String[0], func);
 
-    assertThat(html, is("<html></html>"));
+    assertThat(html, is("<!DOCTYPE html><html></html>"));
   }
 }

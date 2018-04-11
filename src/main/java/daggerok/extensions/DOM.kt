@@ -11,25 +11,62 @@ fun Array<out Pair<String, String>>.join(quote: String = "'") = if (this.isEmpty
 fun Array<out String>.join(separator: String = "") = if (this.isEmpty()) ""
   else this.joinToString(separator) { it }
 
+// HTML content receiver (appender) builder
+class HtmlBuilder {
+  var innerHTML: String = "<!DOCTYPE html>"
+  //  private set
+  fun text(content: String) {
+    innerHTML += content
+  }
+}
+
 /* DOM API */
 
 fun html(vararg attributes: Pair<String, String> = arrayOf(),
          content: Array<String> = arrayOf(),
-         func: (String) -> String) = "<html${attributes.join()}>${func(content.join())}</html>"
+         func: HtmlBuilder.(String) -> Unit): String {
 
-fun head(vararg attributes: Pair<String, String> = arrayOf(),
-         content: Array<String> = arrayOf(),
-         func: (String) -> String) = "<head${attributes.join()}>${func(content.join())}</head>"
+  val context = HtmlBuilder()
+  context.text("<html${attributes.join()}>")
+  context.func(content.join())
+  context.text("</html>")
+  return context.innerHTML
+}
 
-fun title(vararg attributes: Pair<String, String> = arrayOf(),
-          content: Array<String> = arrayOf(),
-          func: (String) -> String) = "<title${attributes.join()}>${func(content.join())}</title>"
+fun HtmlBuilder.head(vararg attributes: Pair<String, String> = arrayOf(),
+                     content: Array<String> = arrayOf(),
+                     func: HtmlBuilder.(String) -> Unit) {
 
-fun body(vararg attributes: Pair<String, String> = arrayOf(),
-         content: Array<String> = arrayOf(),
-         func: (String) -> String) = "<body${attributes.join()}>${func(content.join())}</body>"
+  text("<head${attributes.join()}>")
+  func(content.join())
+  text("</head>")
+}
 
-fun div(vararg attributes: Pair<String, String> = arrayOf(),
-        content: Array<String> = arrayOf(), //vararg content: String = arrayOf(),
-        func: (String) -> String) = "<div${attributes.join()}>${func(content.join())}</div>"
+fun HtmlBuilder.title(vararg attributes: Pair<String, String> = arrayOf(),
+                      content: Array<String> = arrayOf(),
+                      func: HtmlBuilder.(String) -> Unit) {
+
+  text("<title${attributes.join()}>")
+  func(content.join())
+  text("</title>")
+}
+
+fun HtmlBuilder.body(vararg attributes: Pair<String, String> = arrayOf(),
+                     content: Array<String> = arrayOf(),
+                     func: HtmlBuilder.(String) -> Unit) {
+
+  text("<body${attributes.join()}>")
+  func(content.join())
+  text("</body>")
+}
+
+fun HtmlBuilder.div(vararg attributes: Pair<String, String> = arrayOf(),
+                    content: Array<String> = arrayOf(), //vararg content: String = arrayOf(),
+                    func: HtmlBuilder.(String) -> Unit) {
+
+  text("<div${attributes.join()}>")
+  func(content.join())
+  text("</div>")
+}
+
 // ...

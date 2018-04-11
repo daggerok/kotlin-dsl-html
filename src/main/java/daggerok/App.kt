@@ -7,12 +7,12 @@ fun main(args: Array<String>) {
     html("lang" to "en", "ng-app" to "my-app") {
       head {
         title {
-          "Kotlin awesome!"
+          text("Kotlin awesome!")
         }
-      } +
+      }
       body {
         div("class" to "container-fluid") {
-          "DSL as 1-2-3"
+          innerHTML += "DSL as 1-2-3"
         }
       }
     }

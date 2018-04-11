@@ -2,18 +2,18 @@
 
 see final implementation here: `kotlin-dsl-html/src/main/java/daggerok/extensions/DOM.kt`
 
-.current DSL requires using `+` operator to join 2 and more elements
+.current DSL requires using `innerHTML +=` operation or `text("...")` for text nodes (bottom nodes of html-tree)
 [sources,kotlin]
 ----
 html("lang" to "ru", "xmlns" to "https://ololo-trololo.com/bla-bla/schema.xsd") {
   head {
     title {
-      "Hey"
+      innerHtml += "Hey"
     }
-  } +
+  }
   body {
     div("class" to "wrapper") {
-      "Ho!"
+      text("Ho!")
     }
   }
 }
@@ -22,6 +22,7 @@ html("lang" to "ru", "xmlns" to "https://ololo-trololo.com/bla-bla/schema.xsd") 
 .code above produces next output:
 [sources,html]
 ----
+<!DOCTYPE html>
 <html lang='ru' xmlns='http://ololo-trololo.com/bla-bla/schema.xsd'>
   <head>
     <title>Hey</title>
