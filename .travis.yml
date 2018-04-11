@@ -1,0 +1,18 @@
+env:
+  global:
+  - TERM=dumb
+
+language: java
+jdk: oraclejdk8
+
+install: true
+
+script:
+- bash gradlew run
+- bash gradlew installDist
+- bash build/install/kotlin-dsl-html/bin/kotlin-dsl-html
+
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.gradle
