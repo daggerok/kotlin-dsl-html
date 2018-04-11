@@ -6,7 +6,7 @@
 html {
     head {
         title {
-            "Hey!"
+            "Hey"
         }
     }
     body {
@@ -22,10 +22,10 @@ html {
 ----
 <html>
     <head>
-        <title>Hey!</title>
+        <title>Hey</title>
     </head>
     <body>
-        <div>Ho</div>
+        <div>Ho!</div>
     </body>
 </html>
 ----

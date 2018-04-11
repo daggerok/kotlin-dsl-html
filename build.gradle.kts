@@ -3,16 +3,14 @@ import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
+val javaVersion = "1.8"
+val lombokVersion = "1.16.20"
 val kotlinVersion: String by extra
-val javaVersion: String by extra
 
 buildscript {
 
   var kotlinVersion: String by extra
   kotlinVersion = "1.2.31"
-
-  var javaVersion: String by extra
-  javaVersion = "1.8"
 
   repositories {
     mavenLocal()
@@ -44,16 +42,21 @@ java {
 }
 
 application {
-  mainClassName = "daggerok.App"
+  mainClassName = "daggerok.AppKt"
 }
 
 dependencies {
-  compile(kotlin("stdlib"))
-  testCompile("junit:junit:4.12")
+
   allprojects.forEach {
     archives(it)
   }
-  compile(kotlinModule("stdlib-jdk8", kotlinVersion))
+
+  compile(kotlin("stdlib"))
+  compile(kotlin("stdlib-jdk8", kotlinVersion))
+  compileOnly(module("org.projectlombok", "lombok", lombokVersion))
+
+  testCompileOnly(module("org.projectlombok", "lombok", lombokVersion))
+  testCompile("junit:junit:4.12")
 }
 
 repositories {
