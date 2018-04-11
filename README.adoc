@@ -1,6 +1,6 @@
 = DSL: Kotlin to HTML image:https://travis-ci.org/daggerok/kotlin-dsl-html.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/kotlin-dsl-html"]
 
-.TODO: implement DSL:
+.current DSL requires using `+` operator to join 2 and more elements
 [sources,kotlin]
 ----
 html {
@@ -8,7 +8,7 @@ html {
         title {
             "Hey"
         }
-    }
+    } +
     body {
         div {
             "Ho!"
