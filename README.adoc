@@ -1,15 +1,14 @@
 = DSL: Kotlin to HTML image:https://travis-ci.org/daggerok/kotlin-dsl-html.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/kotlin-dsl-html"]
 
-see final implementation here: `kotlin-dsl-html/src/main/java/daggerok/extensions/DOM.kt`
+DOM API implementation (see: `src/main/java/daggerok/extensions/DOM.kt`).
+Best fit with kotlin-ktor framework (see `src/main/java/daggerok/App.kt`)
 
 .current DSL requires using `+` operator to join 2 and more elements
 [sources,kotlin]
 ----
-html("lang" to "ru", "xmlns" to "https://ololo-trololo.com/bla-bla/schema.xsd") {
+html("lang" to "ru", "ng-app" to "my-app") {
   head {
-    title {
-      "Hey"
-    }
+    title { "Hey" }
   } +
   body {
     div("class" to "wrapper") {
@@ -36,6 +35,8 @@ link:https://discuss.kotlinlang.org/t/kotlin-html-dsl/7378[TODO: DSL improvement
 
 links:
 
+. link:https://github.com/ktorio/ktor[kotlin-ktor web server]
+. link:https://github.com/kittinunf/Fuel[Kotlin HTTP client]
 . link:https://www.youtube.com/watch?v=GjGQpSFieXA][youtube: Hadi Hariri @hhariri - Creating DSL's in idiomatic Kotlin]
 . link:https://www.youtube.com/watch?v=gPH9XnvpoXE[youtube: Kotlin DSLs in 42 minutes by Eugene Petrenko]
 . link:https://github.com/reactor/reactor-kotlin-extensions/blob/master/build.gradle.kts

@@ -6,12 +6,34 @@ language: java
 jdk: oraclejdk8
 
 install: true
+before_script:
+- sudo apt update -y >/dev/null 2>&1 || true
+- sudo apt install -y --no-install-recommends bash unzip curl python-pip >/dev/null 2>&1
+- sudo pip install httpie >/dev/null 2>&1
+- source <(curl -fsSL https://raw.github.com/daggerok/bash-functions/master/main.bash)
+- stop_any 8080 80
 
 script:
 - bash gradlew test
-- bash gradlew run
+
+- bash gradlew run >/dev/null 2>&1 &
+- wait_for 8080
+- http :8080
+- stop_any 8080
+
 - bash gradlew installDist
-- bash build/install/kotlin-dsl-html/bin/kotlin-dsl-html
+- bash build/install/kotlin-dsl-html/bin/kotlin-dsl-html &
+- wait_for 8080
+- http :8080
+- stop_any 8080
+
+- bash gradlew distZip
+- cp -Rf build/distributions/kotlin-dsl-html.zip /tmp/
+- unzip /tmp/kotlin-dsl-html.zip -d /tmp
+- bash /tmp/kotlin-dsl-html/bin/kotlin-dsl-html 8000 >/dev/null 2>&1 &
+- wait_for 8000
+- http :8000
+- stop_any 8000
 
 cache:
   directories:
