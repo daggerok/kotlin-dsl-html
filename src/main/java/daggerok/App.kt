@@ -17,4 +17,8 @@ fun main(args: Array<String>) {
       }
     }
   )
+
+  println()
+
+  simpleStupid("ololo trololo!")
 }

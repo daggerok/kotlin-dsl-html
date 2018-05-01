@@ -3,7 +3,7 @@
 see final implementation here: `kotlin-dsl-html/src/main/java/daggerok/extensions/DOM.kt`
 
 .current DSL requires using `innerHTML +=` operation or `text("...")` for text nodes (bottom nodes of html-tree)
-[sources,kotlin]
+[source,kotlin]
 ----
 html("lang" to "ru", "xmlns" to "https://ololo-trololo.com/bla-bla/schema.xsd") {
   head {
@@ -20,7 +20,7 @@ html("lang" to "ru", "xmlns" to "https://ololo-trololo.com/bla-bla/schema.xsd") 
 ----
 
 .code above produces next output:
-[sources,html]
+[source,html]
 ----
 <!DOCTYPE html>
 <html lang='ru' xmlns='http://ololo-trololo.com/bla-bla/schema.xsd'>
@@ -37,6 +37,8 @@ link:https://discuss.kotlinlang.org/t/kotlin-html-dsl/7378[TODO: DSL improvement
 
 links:
 
+. link:https://github.com/ktorio/ktor[kotlin-ktor web server]
+. link:https://github.com/kittinunf/Fuel[Kotlin HTTP client]
 . link:https://www.youtube.com/watch?v=GjGQpSFieXA][youtube: Hadi Hariri @hhariri - Creating DSL's in idiomatic Kotlin]
 . link:https://www.youtube.com/watch?v=gPH9XnvpoXE[youtube: Kotlin DSLs in 42 minutes by Eugene Petrenko]
 . link:https://github.com/reactor/reactor-kotlin-extensions/blob/master/build.gradle.kts

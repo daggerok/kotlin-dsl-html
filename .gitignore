@@ -6,3 +6,5 @@
 *.iws
 build
 out/
+bin/
+lib/
