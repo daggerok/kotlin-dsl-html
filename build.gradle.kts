@@ -10,12 +10,11 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
 
 val javaVersion = "1.8"
 val lombokVersion = "1.16.20"
-val kotlinVersion: String by extra
 
 buildscript {
 
   var kotlinVersion: String by extra
-  kotlinVersion = "1.2.31"
+  kotlinVersion = "1.2.41"
 
   repositories {
     mavenLocal()
@@ -31,8 +30,10 @@ buildscript {
 
 plugins {
   java
+  idea
+  eclipse
   application
-  kotlin("jvm") version "1.2.31" apply true
+  kotlin("jvm") version "1.2.41" apply true
 }
 
 java {
@@ -56,7 +57,7 @@ repositories {
   mavenLocal()
   mavenCentral()
   maven { setUrl("https://plugins.gradle.org/m2/") }
-   maven { setUrl("https://dl.bintray.com/kotlin/ktor/") }
+  maven { setUrl("https://dl.bintray.com/kotlin/ktor/") }
   // maven { setUrl("https://dl.bintray.com/kotlin/kotlinx") }
   jcenter()
 }
