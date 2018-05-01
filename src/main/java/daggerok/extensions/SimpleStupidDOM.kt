@@ -1,6 +1,6 @@
 package daggerok.extensions
 
-/* internal API*/
+/* internal API */
 
 internal fun Array<out String>.toHTML(separator: String = "") =
     this.joinToString(separator) { it }
@@ -11,9 +11,7 @@ internal fun Map<String, String>.toAttributes() =
     if (this.isEmpty()) "" else " " + this.entries
         .joinToString(separator = " ") { """'${it.key}'='${it.value}'""" }
 
-internal fun empty() = ""
-
-/* public API*/
+/* public API */
 
 fun html(vararg content: String) = "<html>${content.toHTML()}</html>"
 fun head(vararg content: String) = "<head>${content.toHTML()}</head>"
