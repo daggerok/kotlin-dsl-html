@@ -92,3 +92,7 @@ val compileTestKotlin: KotlinCompile by tasks
 compileTestKotlin.kotlinOptions {
   jvmTarget = javaVersion
 }
+
+val wrapper: Wrapper by tasks
+wrapper.gradleVersion = "4.7"
+wrapper.distributionType = Wrapper.DistributionType.ALL
