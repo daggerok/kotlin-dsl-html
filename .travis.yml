@@ -18,13 +18,15 @@ script:
 
 - bash gradlew run >/dev/null 2>&1 &
 - wait_for 8080
-- http :8080
+- http :8080/plus
+- http :8080/dom
 - stop_any 8080
 
 - bash gradlew installDist
 - bash build/install/kotlin-dsl-html/bin/kotlin-dsl-html &
 - wait_for 8080
-- http :8080
+- http :8080/plus
+- http :8080/dom
 - stop_any 8080
 
 - bash gradlew distZip
@@ -32,7 +34,8 @@ script:
 - unzip /tmp/kotlin-dsl-html.zip -d /tmp
 - bash /tmp/kotlin-dsl-html/bin/kotlin-dsl-html 8000 >/dev/null 2>&1 &
 - wait_for 8000
-- http :8000
+- http :8000/dom
+- http :8000/plus
 - stop_any 8000
 
 cache:

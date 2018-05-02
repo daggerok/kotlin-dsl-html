@@ -1,6 +1,7 @@
 package daggerok
 
-import daggerok.extensions.*
+import daggerok.app.dom
+import daggerok.app.plus
 import io.ktor.application.call
 import io.ktor.http.ContentType.Text.Html
 import io.ktor.http.HttpStatusCode.Companion.OK
@@ -14,22 +15,14 @@ fun main(args: Array<String>) {
   val port = if (args.isEmpty()) 8080 else try { args[0].toInt() } catch (e: Throwable) { 8080 }
   embeddedServer(Netty, port) {
     routing {
-      get("") {
+      get("/dom") {
         call.respondText(status = OK, contentType = Html) {
-          html("lang" to "en", "ng-app" to "my-app") {
-            head {
-              title { "ololo" }
-            } +
-            body {
-              "Okay..&nbsp;" +
-              div("class" to "container-fluid") {
-                "some text:" +
-                div { "yeah!" } +
-                "more text"
-              } +
-              div { "hey!" }
-            }
-          }
+          dom()
+        }
+      }
+      get("/plus") {
+        call.respondText(status = OK, contentType = Html) {
+          plus()
         }
       }
     }

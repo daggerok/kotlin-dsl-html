@@ -58,6 +58,7 @@ repositories {
   mavenCentral()
   maven { setUrl("https://plugins.gradle.org/m2/") }
   maven { setUrl("https://dl.bintray.com/kotlin/ktor/") }
+  maven { setUrl("https://dl.bintray.com/daggerok/daggerok/") }
   // maven { setUrl("https://dl.bintray.com/kotlin/kotlinx") }
   jcenter()
 }
@@ -67,6 +68,8 @@ dependencies {
   allprojects.forEach {
     archives(it)
   }
+
+  compile( "com.github.daggerok:kotlin-html-dsl:0.3.ALL")
 
   compile(kotlin("stdlib"))
   compile(kotlin("stdlib-jdk8"))
