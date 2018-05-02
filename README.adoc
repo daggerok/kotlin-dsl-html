@@ -1,5 +1,9 @@
 = DSL: Kotlin to HTML image:https://travis-ci.org/daggerok/kotlin-dsl-html.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/kotlin-dsl-html"]
 
+This project is basically testing my Kotlin HTML DSL library:
+"com.github.daggerok:kotlin-html-dsl:0.3.ALL"
+
+////
 DOM API implementation (see: `src/main/java/daggerok/extensions/DOM.kt`).
 Best fit with kotlin-ktor framework (see `src/main/java/daggerok/App.kt`)
 
@@ -30,16 +34,18 @@ html("lang" to "ru", "ng-app" to "my-app") {
   </body>
 </html>
 ----
+////
+
 
 link:https://discuss.kotlinlang.org/t/kotlin-html-dsl/7378[TODO: DSL improvements question on Kotlin discuss]
 
 links:
 
-. link:https://github.com/ktorio/ktor[kotlin-ktor web server]
-. link:https://github.com/kittinunf/Fuel[Kotlin HTTP client]
-. link:https://www.youtube.com/watch?v=GjGQpSFieXA][youtube: Hadi Hariri @hhariri - Creating DSL's in idiomatic Kotlin]
-. link:https://www.youtube.com/watch?v=gPH9XnvpoXE[youtube: Kotlin DSLs in 42 minutes by Eugene Petrenko]
-. link:https://github.com/reactor/reactor-kotlin-extensions/blob/master/build.gradle.kts
-. link:https://github.com/johnrengelman/shadow/issues/317
-. link:https://github.com/gradle/kotlin-dsl/blob/master/samples/hello-kotlin/build.gradle.kts
-. link:https://kotlinlang.org/docs/reference/using-gradle.html
+- link:https://github.com/ktorio/ktor[kotlin-ktor web server]
+- link:https://github.com/kittinunf/Fuel[Kotlin HTTP client]
+- link:https://www.youtube.com/watch?v=GjGQpSFieXA][youtube: Hadi Hariri @hhariri - Creating DSL's in idiomatic Kotlin]
+- link:https://www.youtube.com/watch?v=gPH9XnvpoXE[youtube: Kotlin DSLs in 42 minutes by Eugene Petrenko]
+- link:https://github.com/reactor/reactor-kotlin-extensions/blob/master/build.gradle.kts
+- link:https://github.com/johnrengelman/shadow/issues/317
+- link:https://github.com/gradle/kotlin-dsl/blob/master/samples/hello-kotlin/build.gradle.kts
+- link:https://kotlinlang.org/docs/reference/using-gradle.html
