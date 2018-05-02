@@ -54,14 +54,10 @@ application {
 }
 
 repositories {
-  maven { setUrl("https://dl.bintray.com/daggerok/daggerok/") } // version: 0.3.ALL
-//  maven { setUrl("https://jitpack.io") } // version: 0.3.ALL-SNAPSHOT
   maven { setUrl("https://plugins.gradle.org/m2/") }
   maven { setUrl("https://dl.bintray.com/kotlin/ktor/") }
-  // maven { setUrl("https://dl.bintray.com/kotlin/kotlinx") }
-//  mavenLocal()
-  mavenCentral()
-//  jcenter()
+//  mavenCentral() // TODO: wait for maven central sync
+  jcenter()
 }
 
 dependencies {
@@ -70,12 +66,10 @@ dependencies {
     archives(it)
   }
 
-  implementation( "com.github.daggerok:kotlin-html-dsl:0.3.ALL")
-//  implementation( "com.github.daggerok:kotlin-html-dsl:0.3.ALL-SNAPSHOT")
+  implementation( "com.github.daggerok:kotlin-html-dsl:1.0.ALL")
 
   compile(kotlin("stdlib"))
   compile(kotlin("stdlib-jdk8"))
-  compileOnly(module("org.projectlombok", "lombok", lombokVersion))
   compile( "io.ktor:ktor-server-netty:0.9.1")
   compile( "ch.qos.logback:logback-classic:1.2.1")
 
@@ -83,7 +77,6 @@ dependencies {
   testCompile(kotlin("test-junit"))
   testCompile("junit:junit:4.12")
   testCompile( "com.github.kittinunf.fuel:fuel:1.12.1")
-  testCompileOnly(module("org.projectlombok", "lombok", lombokVersion))
 }
 
 defaultTasks("clean", "installDist")

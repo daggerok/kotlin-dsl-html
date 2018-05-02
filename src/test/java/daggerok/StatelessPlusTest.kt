@@ -29,6 +29,29 @@ class StatelessPlusTest {
     assertEquals(expected, actual)
   }
 
+  @Test fun `one more unit testing`() {
+
+    val actual = html("lang" to "en") {
+      head {
+        meta("charset" to "UTF-8")+
+        title {
+          "DOM API"
+        }
+      }+
+      body {
+        h1 {
+          "Hello, World!"
+        }
+      }
+    }
+
+    val expected = "<!DOCTYPE html><html lang='en'>" +
+        "<head><meta charset='UTF-8'/><title>DOM API</title></head>" +
+        "<body><h1>Hello, World!</h1></body></html>"
+
+    assertEquals(expected, actual)
+  }
+
   @Test fun `PLUS integration testing`() {
 
     val port = Random(1000).nextInt(1000) + 8080
