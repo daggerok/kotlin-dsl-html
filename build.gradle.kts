@@ -56,8 +56,8 @@ application {
 repositories {
   maven { setUrl("https://plugins.gradle.org/m2/") }
   maven { setUrl("https://dl.bintray.com/kotlin/ktor/") }
-//  mavenCentral() // TODO: wait for maven central sync
-  jcenter()
+  mavenCentral() // TODO: wait for maven central sync
+//  jcenter()
 }
 
 dependencies {

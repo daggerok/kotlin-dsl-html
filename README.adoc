@@ -3,10 +3,10 @@
 This project is basically testing my Kotlin HTML DSL library:
 link:https://github.com/daggerok/kotlin-html-dsl[`com.github.daggerok:kotlin-html-dsl:0.3.ALL`]
 
-.jitpack
+.build with forcing fetch new version of dependencies from bintray / jitpack / maven central
 [source,bash]
 ----
-./gradlew --refresh-dependencies
+./gradlew -iS --refresh-dependencies
 ----
 
 ////
