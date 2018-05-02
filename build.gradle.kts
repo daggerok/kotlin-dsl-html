@@ -54,11 +54,12 @@ application {
 }
 
 repositories {
+  //maven { setUrl("https://dl.bintray.com/daggerok/daggerok/") }
+  maven { setUrl("https://jitpack.io") }
   mavenLocal()
   mavenCentral()
   maven { setUrl("https://plugins.gradle.org/m2/") }
   maven { setUrl("https://dl.bintray.com/kotlin/ktor/") }
-  maven { setUrl("https://dl.bintray.com/daggerok/daggerok/") }
   // maven { setUrl("https://dl.bintray.com/kotlin/kotlinx") }
   jcenter()
 }
