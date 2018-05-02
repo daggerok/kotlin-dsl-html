@@ -54,8 +54,8 @@ application {
 }
 
 repositories {
-  //maven { setUrl("https://dl.bintray.com/daggerok/daggerok/") } // version: 0.3.ALL
-  maven { setUrl("https://jitpack.io") } // version: 0.3.ALL-SNAPSHOT
+  maven { setUrl("https://dl.bintray.com/daggerok/daggerok/") } // version: 0.3.ALL
+//  maven { setUrl("https://jitpack.io") } // version: 0.3.ALL-SNAPSHOT
   maven { setUrl("https://plugins.gradle.org/m2/") }
   maven { setUrl("https://dl.bintray.com/kotlin/ktor/") }
   // maven { setUrl("https://dl.bintray.com/kotlin/kotlinx") }
@@ -70,8 +70,8 @@ dependencies {
     archives(it)
   }
 
-//  compile( "com.github.daggerok:kotlin-html-dsl:0.3.ALL")
-  implementation( "com.github.daggerok:kotlin-html-dsl:0.3.ALL-SNAPSHOT")
+  implementation( "com.github.daggerok:kotlin-html-dsl:0.3.ALL")
+//  implementation( "com.github.daggerok:kotlin-html-dsl:0.3.ALL-SNAPSHOT")
 
   compile(kotlin("stdlib"))
   compile(kotlin("stdlib-jdk8"))
