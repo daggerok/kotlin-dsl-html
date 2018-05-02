@@ -1,7 +1,7 @@
 = DSL: Kotlin to HTML image:https://travis-ci.org/daggerok/kotlin-dsl-html.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/kotlin-dsl-html"]
 
 This project is basically testing my Kotlin HTML DSL library:
-"com.github.daggerok:kotlin-html-dsl:0.3.ALL"
+link:https://github.com/daggerok/kotlin-html-dsl[`com.github.daggerok:kotlin-html-dsl:0.3.ALL`]
 
 .jitpack
 [source,bash]
