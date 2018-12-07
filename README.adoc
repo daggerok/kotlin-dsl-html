@@ -51,8 +51,8 @@ links:
 - link:https://github.com/kittinunf/Fuel[Kotlin HTTP client]
 - link:https://www.youtube.com/watch?v=GjGQpSFieXA][youtube: Hadi Hariri @hhariri - Creating DSL's in idiomatic Kotlin]
 - link:https://www.youtube.com/watch?v=gPH9XnvpoXE[youtube: Kotlin DSLs in 42 minutes by Eugene Petrenko]
-- link:https://github.com/reactor/reactor-kotlin-extensions/blob/master/build.gradle.kts
-- link:https://github.com/johnrengelman/shadow/issues/317
-- link:https://github.com/gradle/kotlin-dsl/blob/master/samples/hello-kotlin/build.gradle.kts
-- link:https://kotlinlang.org/docs/reference/using-gradle.html
+- https://github.com/reactor/reactor-kotlin-extensions/blob/master/build.gradle.kts
+- https://github.com/johnrengelman/shadow/issues/317
+- https://github.com/gradle/kotlin-dsl/blob/master/samples/hello-kotlin/build.gradle.kts
+- https://kotlinlang.org/docs/reference/using-gradle.html
 - link:https://www.youtube.com/watch?v=zYNbsVv9oN0[Kotlin DSL]
